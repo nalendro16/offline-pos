@@ -1,65 +1,60 @@
 import './App.css'
-import logo from './logo.svg'
+import Header from './components/Header'
 import styled, { ThemeProvider } from 'styled-components'
+import * as theme from './styled/Theme'
+import ProductCard from './components/ProductCard'
+import { useSelector } from 'react-redux'
+import CartItem from './components/CartItem'
 
-const theme = {
-  primary: 'red',
-  secondary: 'blue',
-}
 const Container = styled.div`
-  text-align: center;
+  display: flex;
+  width: 100vw;
+  height: 92vh;
 `
-const Head = styled.h1`
-  color: ${(props) => props.theme.primary};
+const MenuContainer = styled.div`
+  width: 15%;
+  padding: 0.5rem 0;
+  padding-right: 0.5rem;
 `
-const Brand = styled.img`
-  height: 10vh;
-  margin-top: 2rem;
+const ProductContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 60%;
+  height: 100%;
+  background: ${(props) => props.theme.light};
+  border-left: 1px solid #f7f7f7;
+  border-right: 1px solid #f7f7f7;
+  padding: 0.5rem 0.5rem;
 `
-const Button = styled.button`
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  margin: 0 1rem;
-  background: ${(props) => (props.primary ? 'blue' : 'green')};
-`
-const TomatoButton = styled(Button)`
-  background: tomato;
-`
-const Wrapper = styled.div`
-  background: yellow;
-  &.test {
-    background: orange;
-  }
-`
-const AnotherButton = styled.button`
-  ${(props) => {
-    console.log(props)
-    switch (props.variant) {
-      case 'primary':
-        return `background:blue`
-      case 'success':
-        return `background:green`
-      default:
-        return `background:grey`
-    }
-  }}
+const CartContainer = styled.div`
+  width: 25%;
+  padding: 0.5rem 0.5rem;
 `
 
 function App() {
+  const product = useSelector((state) => state.product.product)
+  console.log(product && product)
+
   return (
     <ThemeProvider theme={theme}>
+      <Header />
       <Container>
-        <Brand src={logo} alt="react" />
-        <Head>Styled Component</Head>
-        <Button>Primarry</Button>
-        <Button primary>Primarry</Button>
-        <TomatoButton>Tomato</TomatoButton>
-        <Wrapper>Wrapper</Wrapper>
-        <Wrapper className="test">Test Wrapper</Wrapper>
-        <AnotherButton variant="primary">Primary</AnotherButton>
-        <AnotherButton variant="success">Success</AnotherButton>
-        <AnotherButton>Gray</AnotherButton>
+        <MenuContainer>Menu</MenuContainer>
+        <ProductContainer>
+          {product &&
+            product.map((data) => (
+              <ProductCard
+                img={data.image}
+                name={data.name}
+                price={data.price}
+                key={data.id}
+              />
+            ))}
+        </ProductContainer>
+        <CartContainer>
+          <CartItem />
+        </CartContainer>
       </Container>
     </ThemeProvider>
   )
