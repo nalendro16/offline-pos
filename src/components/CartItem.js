@@ -29,7 +29,7 @@ export default function CartItem() {
   const [count, setCount] = useState(1)
   return (
     <Cart>
-      <ItemName>Name</ItemName>
+      <ItemName>Item Name</ItemName>
       <CounterContainer>
         <Counter inc />
         {count}
