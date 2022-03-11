@@ -12,7 +12,7 @@ const Head = styled.div`
 export default function Header() {
   return (
     <Head>
-      <h1>KASYR</h1>
+      <h1>KASZiER</h1>
     </Head>
   )
 }
