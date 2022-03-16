@@ -5,4 +5,6 @@ export const light = '#fff'
 export const dark = '#000'
 export const gray = '#bcb3b3'
 export const Pspacing = `flex;
-justify-content: space-between;`
+justify-content: space-between;
+margin-top: 0.2em;
+`
