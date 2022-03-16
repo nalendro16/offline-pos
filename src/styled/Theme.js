@@ -4,3 +4,5 @@ export const tertiary = '#A1514A'
 export const light = '#fff'
 export const dark = '#000'
 export const gray = '#bcb3b3'
+export const Pspacing = `flex;
+justify-content: space-between;`
