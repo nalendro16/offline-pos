@@ -8,8 +8,20 @@ const Pay = styled.div`
 `
 const Change = styled.div`
   display: ${(props) => props.theme.Pspacing};
+  margin-bottom: 0.8em;
 `
-const btnBox = styled.div``
+const BtnBox = styled.div`
+  display: ${(props) => props.theme.Pspacing};
+`
+const Btn = styled.button`
+  padding: 5px 20px;
+  border: none;
+  color: ${(props) => props.theme.light};
+  background: ${(props) => props.theme.tertiary};
+  &:nth-child(2) {
+    background: ${(props) => props.theme.primary};
+  }
+`
 const Box = styled.div`
   padding: 1.7em;
 `
@@ -25,11 +37,15 @@ export default function CalculateBox() {
         <p>Jumlah bayar</p>
         <p>Rp.15.000</p>
       </Pay>
+      <hr />
       <Change>
         <p>Kembalian</p>
         <p>Rp.2.000</p>
       </Change>
-      <btnBox></btnBox>
+      <BtnBox>
+        <Btn>Cancel</Btn>
+        <Btn>Selesai</Btn>
+      </BtnBox>
     </Box>
   )
 }

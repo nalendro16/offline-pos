@@ -32,6 +32,8 @@ const ProductContainer = styled.div`
 const CartContainer = styled.div`
   width: 25%;
   padding: 0.5rem 0.5rem;
+  display: ${(props) => props.theme.Pspacing};
+  flex-direction: column;
 `
 
 function App() {
