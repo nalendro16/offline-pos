@@ -7,6 +7,4 @@ export const gray = '#bcb3b3'
 export const Pspacing = `flex;
 justify-content: space-between;
 margin-top: 0.2em;
-margin-left:5px;
-margin-right:5px;
 `
