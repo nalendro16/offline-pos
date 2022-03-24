@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Btn from './Btn'
 
 const Total = styled.div`
   display: ${(props) => props.theme.Pspacing};
@@ -13,15 +14,7 @@ const Change = styled.div`
 const BtnBox = styled.div`
   display: ${(props) => props.theme.Pspacing};
 `
-const Btn = styled.button`
-  padding: 5px 20px;
-  border: none;
-  color: ${(props) => props.theme.light};
-  background: ${(props) => props.theme.tertiary};
-  &:nth-child(2) {
-    background: ${(props) => props.theme.primary};
-  }
-`
+
 const Box = styled.div`
   padding: 1.7em;
 `
@@ -35,7 +28,7 @@ export default function CalculateBox() {
       </Total>
       <Pay>
         <p>Jumlah bayar</p>
-        <p>Rp.15.000</p>
+        <input type="number" />
       </Pay>
       <hr />
       <Change>
@@ -43,8 +36,8 @@ export default function CalculateBox() {
         <p>Rp.2.000</p>
       </Change>
       <BtnBox>
-        <Btn>Cancel</Btn>
-        <Btn>Selesai</Btn>
+        <Btn primary />
+        <Btn />
       </BtnBox>
     </Box>
   )
