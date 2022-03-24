@@ -13,6 +13,9 @@ const TheButton = styled.button`
   }
 `
 
+const PrimaryButton = styled(TheButton)``
+const WarningButton = styled(TheButton)``
+
 export default function Btn({ primary }) {
   if (primary) {
     return <PrimaryButton>Selesai</PrimaryButton>
