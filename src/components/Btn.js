@@ -13,8 +13,12 @@ const TheButton = styled.button`
   }
 `
 
-const PrimaryButton = styled(TheButton)``
-const WarningButton = styled(TheButton)``
+const PrimaryButton = styled(TheButton)`
+  background: ${(props) => props.theme.primary};
+`
+const WarningButton = styled(TheButton)`
+  background: ${(props) => props.theme.tertiary};
+`
 
 export default function Btn({ primary }) {
   if (primary) {
